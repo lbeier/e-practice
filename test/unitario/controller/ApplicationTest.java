@@ -1,6 +1,7 @@
 package unitario.controller;
 
 import TestHelpers.BaseTestServer;
+import org.junit.Before;
 import org.junit.Test;
 import play.mvc.Result;
 import java.util.HashMap;
@@ -12,15 +13,13 @@ public class ApplicationTest extends BaseTestServer {
 
     @Test
     public void quandoChamaOMetodoIndexRedirecionaParaOutraRota() {
-        Result result;
-        result = callAction(controllers.routes.ref.Application.index());
+        Result result = callAction(controllers.routes.ref.Application.index());
         assertThat(status(result)).isEqualTo(SEE_OTHER);
     }
 
     @Test
     public void quandoChamaOMetodoCriaExerciciosRedirecionaParaOutraRota() {
-        Result result;
-        result = callAction(controllers.routes.ref.Application.criaExercicios());
+        Result result = callAction(controllers.routes.ref.Application.criaExercicios());
         assertThat(status(result)).isEqualTo(SEE_OTHER);
     }
 
@@ -40,7 +39,6 @@ public class ApplicationTest extends BaseTestServer {
 
     @Test
     public void quandoPostaNovaSolucaoRetornaMensagemDeSucesso() throws Exception {
-        testBrowser.goTo(URL_ENVIRONMENT);
         testBrowser.fill("#solucaoDoUsuario").with("var x  = 1");
         testBrowser.$("#botaoDeEnviar").click();
         testBrowser.$("#solucaoDoUsuario").submit();
@@ -51,7 +49,6 @@ public class ApplicationTest extends BaseTestServer {
 
     @Test
     public void mantemASolucaoNaCaixaDeTextoAposEnviarASolucao() throws Exception {
-        testBrowser.goTo(URL_ENVIRONMENT);
         testBrowser.fill("#solucaoDoUsuario").with("var esseTextoSeraMantido : String");
         testBrowser.find("button", withName("valor")).click();
 
@@ -61,7 +58,6 @@ public class ApplicationTest extends BaseTestServer {
 
     @Test
     public void quandoPostaSolucaoEmBrancoRetornaMensagemDeErro() throws Exception {
-        testBrowser.goTo(URL_ENVIRONMENT);
         testBrowser.fill("#solucaoDoUsuario").with("");
         testBrowser.$("#botaoDeEnviar").click();
         testBrowser.$("#solucaoDoUsuario").submit();

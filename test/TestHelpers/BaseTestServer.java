@@ -20,6 +20,7 @@ public abstract class BaseTestServer extends BaseFakeApplication {
         testServer = Helpers.testServer(3333);
         testBrowser = new TestBrowser(HTMLUNIT, URL_ENVIRONMENT);
         testServer.start();
+        testBrowser.goTo(URL_ENVIRONMENT);
     }
 
     @AfterClass
