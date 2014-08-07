@@ -13,7 +13,7 @@ public abstract class BaseTestServer extends BaseFakeApplication {
 
     protected static TestBrowser testBrowser;
     protected static TestServer testServer;
-    protected static final String URL_ENVIRONMENT = "http://localhost:3333";
+    protected static final String URL_ENVIRONMENT = System.getenv("URL_ENVIRONMENT");
 
     @BeforeClass
     public static void setup() throws Exception {
