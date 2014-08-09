@@ -7,6 +7,12 @@ green=$(tput setaf 2)
 yellow=$(tput setaf 3)
 reset=$(tput sgr0)
 
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  command = sudo -i -u postgres psql
+else
+  command = psql
+fi
+
 echo "Criando banco de dados com a seguinte configuracao:"
 echo "Banco de dados: ${blue}e_practice${reset}"
 echo "Usuario: ${blue}aceleradora${reset}"
