@@ -18,7 +18,7 @@ alias play=/path/to/play/play
 
 ## Setup da aplicação:
 
-1- Clone o repositório através do comando
+1. Clone o repositório através do comando
 ```
 git clone https://github.com/aceleradora/e-practice.git
 ```
