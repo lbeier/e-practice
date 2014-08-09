@@ -12,14 +12,20 @@
 1. [Faça do download do Play! Framework](http://downloads.typesafe.com/play/2.2.3/play-2.2.3.zip)
 2. Descompacte framework
 3. Crie um alias no .bashrc ou .bash_profile
-```alias play=/path/to/play/play```
+```
+alias play=/path/to/play/play
+```
 
 ## Setup da aplicação:
 
 1. Clone o repositório através do comando
-```git clone https://github.com/aceleradora/e-practice.git```
+```
+git clone https://github.com/aceleradora/e-practice.git
+```
 2. Rode o script _setupDataBase.sh_ (é necessário ter o Postgresql instalado e rodando na porta 5432)
 3. Compile e rode a aplicação com o comando
-```play clean compile run```
+```
+play clean compile run
+```
 4. Acesse a aplicação na URL _http://localhost:9000_
 5. No primeiro acesso, é necessário rodar uma Evolution. Clique em _Apply this script now!_
