@@ -6,7 +6,8 @@ print "Usuario: aceleradora"
 print "Senha: aceleradora"
 
 if _platform == "linux" or _platform == "linux2":
-    command = os.system('sudo -i -u postgres psql --command="\i ${current_directory}/db.sql"')
+    currentDirectory = os.getcwd()
+    command = os.system('sudo -i -u postgres psql --command="\i ' + currentDirectory + '/db.sql"')
 elif _platform == "darwin":
     command = os.system("cat ./db.sql | psql")
 else:
