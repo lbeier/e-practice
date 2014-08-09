@@ -10,7 +10,7 @@ current_directory=$(pwd)
 
 echo "Criando banco de dados com a seguinte configuracao:"
 
-if [["$(uname)" == "Darwin"]]; then
+if ["$(uname)" == "Darwin"]; then
   command=$(cat ./db.sql | psql)
 else  
   command=$(sudo -i -u postgres psql --command="\\i ${current_directory}/db.sql")
