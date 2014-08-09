@@ -17,7 +17,7 @@
 ## Setup da aplicação:
 
 1. Clone o repositório através do comando
-`git clone https://github.com/aceleradora/e-practice.git`
+```git clone https://github.com/aceleradora/e-practice.git```
 2. Rode o script _setupDataBase.sh_ (é necessário ter o Postgresql instalado e rodando na porta 5432)
 3. Compile e rode a aplicação com o comando
 ```play clean compile run```
