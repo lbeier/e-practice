@@ -8,18 +8,17 @@ yellow=$(tput setaf 3)
 reset=$(tput sgr0)
 current_directory=$(pwd)
 
-if [[ $OSTYPE == "linux-gnu" ]]; then
-  command=$(sudo -i -u postgres psql --command="\\i ${current_directory}/db.sql")
-else
+echo "Criando banco de dados com a seguinte configuracao:"
+
+if [["$(uname)" == "Darwin"]]; then
   command=$(cat ./db.sql | psql)
+else  
+  command=$(sudo -i -u postgres psql --command="\\i ${current_directory}/db.sql")
 fi
 
-echo "Criando banco de dados com a seguinte configuracao:"
 echo "Banco de dados: ${blue}e_practice${reset}"
 echo "Usuario: ${blue}aceleradora${reset}"
 echo "Senha: ${blue}aceleradora${reset}"
-
-echo "${yellow}Insira a senha do Postgres:${reset}"
 
 if $(command)
 then
