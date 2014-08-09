@@ -8,8 +8,8 @@ yellow=$(tput setaf 3)
 reset=$(tput sgr0)
 current_directory=$(pwd)
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  command=$(sudo -i -u postgres psql --command=\"\i ${current_directory}/db.sql\")
+if [[ $OSTYPE == "linux-gnu" ]]; then
+  command=$(sudo -i -u postgres psql --command="\\i ${current_directory}/db.sql")
 else
   command=$(cat ./db.sql | psql)
 fi
