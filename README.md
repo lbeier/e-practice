@@ -16,3 +16,4 @@
 3. Compile e rode a aplicação com o comando
 `play clean compile run`
 4. Acesse a aplicação na URL _http://localhost:9000_
+5. No primeiro acesso, é necessário rodar uma Evolution. Clique em _Apply this script now!_
