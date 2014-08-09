@@ -7,14 +7,15 @@ green=$(tput setaf 2)
 yellow=$(tput setaf 3)
 reset=$(tput sgr0)
 current_directory=$(pwd)
+os=$(uname)
 
 echo "Criando banco de dados com a seguinte configuracao:"
 
-if ["$(uname)" == "Darwin"]; then
+if [["$os" == "Darwin"]]; then
   command=$(cat ./db.sql | psql)
 else  
   command=$(sudo -i -u postgres psql --command="\\i ${current_directory}/db.sql")
-fi
+fi;
 
 echo "Banco de dados: ${blue}e_practice${reset}"
 echo "Usuario: ${blue}aceleradora${reset}"
