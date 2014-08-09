@@ -17,3 +17,7 @@ dist
 /sbt
 /*.jar
 *.iml
+.DS_Store
+.metadata
+.target
+scala-play-*
